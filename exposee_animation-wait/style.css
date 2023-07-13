@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=Monda:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 200px;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  background-color: #262626;
+}
+
+.blinking-text {
+  color: #484848;
+  display: flex;
+  justify-content: center;
+  padding-top: 175px;
+}
+
+.blinking-text span {
+  position: relative;
+}
+
+.blinking-text span::after {
+  content: attr(data-text);
+  color: #fff900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  text-shadow: 0 0 2px #fff900, 0 0 10px #fff900;
+
+  animation: blinking 1.25s ease-out infinite;
+}
+
+.blinking-text span:nth-child(2)::after {
+  animation-delay: 0.1s;
+}
+.blinking-text span:nth-child(3)::after {
+  animation-delay: 0.2s;
+}
+.blinking-text span:nth-child(4)::after {
+  animation-delay: 0.3s;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Explication */
+
+/* .div-span {
+  background-color: #fff;
+  display: flex;
+  gap: 1rem;
+}
+.div-span span {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: #fff900;
+}
+
+.div-span span:nth-child(2) {
+  background-color: brown;
+}
+span:nth-child(4) {
+  background-color: cornflowerblue;
+} */
